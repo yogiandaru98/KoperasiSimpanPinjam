@@ -1,6 +1,6 @@
 # IMPLEMENTASI UML CLASS DIAGRAM KEDALAM PROJEK JAVAFX DENGAN DATA BASE
 ## KElAS B ANGAKATAN 2020
-## ANGGOTA KELOMPOK DAN PEMBAGIAN TUGASNYA:
+### ANGGOTA KELOMPOK DAN PEMBAGIAN TUGASNYA:
 * YOGI ANDARU
 * 2017051062
 * * TASK
@@ -64,7 +64,7 @@
 ```
 ## DESKRIPSI PROGRAM
 > Program ini dapat digunakan untuk melakukan 
- transaksi perekaman atau penyimpanan data 
+ transaksi tarik tunai, tambah saldo, pendaftaran rekening, penambahan rekening, perekaman atau penyimpanan data 
  pemegang akun di suatu Koperasi Simpan Pinjam, 
  dimana terdapat 2 jenis akun yaitu akun 
  individu dan akun perusahaan. Setiap Pemegang 
