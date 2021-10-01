@@ -4,7 +4,7 @@
 * YOGI ANDARU
 * 2017051062
 * * TASK
-* * * Class Data Model
+* * * Class DataModel
 * * * Class KoperasiController
 * * * Class DBHelper
 * * * Data Base sqlite dan mysql
@@ -63,13 +63,13 @@
       }
 ```
 ## DESKRIPSI PROGRAM
-#### Program ini dapat digunakan untuk melakukan 
-#### transaksi perekaman atau penyimpanan data 
-#### pemegang akun di suatu Koperasi Simpan Pinjam, 
-#### dimana terdapat 2 jenis akun yaitu akun 
-#### individu dan akun perusahaan. Setiap Pemegang 
-#### Akun dapat memiliki 1 akun atau lebih. 
-##  
+> Program ini dapat digunakan untuk melakukan 
+ transaksi perekaman atau penyimpanan data 
+ pemegang akun di suatu Koperasi Simpan Pinjam, 
+ dimana terdapat 2 jenis akun yaitu akun 
+ individu dan akun perusahaan. Setiap Pemegang 
+ Akun dapat memiliki 1 akun atau lebih. 
+#
 ### Program ini di rancang dengan berbagai tools, yaitu : 
 * *  Netbeans 8.0.2
 * *  Java 8 Oracle
