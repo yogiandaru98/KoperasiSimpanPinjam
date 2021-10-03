@@ -62,6 +62,85 @@
       
       }
 ```
+### Design Class Diagram for JavaFX and Database
+```mermaid
+classDiagram
+    Nasabah <|-- Individu
+    Nasabah <|-- Perusahaan
+    Nasabah "1"--o"*" Rekening : has
+    Nasabah o-- DataModel : Data Modeling
+    DataModel <-- KoperasiController : Data Control
+    DataModel --> DBHelper : DB Connection
+    KoperasiController <.. AccountHolderForm : Form Control      
+
+    class Nasabah{
+      <<abstract>>
+      -IntegerProperty RekeningID
+      -StringProperty nama
+      -StringProperty alamat
+        +Nasabah(RekeningID,nama, alamat ,rekening)
+        +tambahRekening(Rekening rek)
+    }
+    
+    class Individu{
+      -LongProperty nik
+      -LongProperty npwp
+
+    }
+    class Perusahaan{
+      -StringProperty nib
+    }
+    class Rekening{
+      -DoubleProperty balance
+      +tambahSaldo(double jumlah)
+      +setAccNumber()
+      +tarikTunai(double jumlah)
+
+    }
+
+    class DataModel{
+        Connection conn
+        addNasabah()
+	IgetRekening()
+	PgetRekening()
+	nextRekeningID()
+	nextRekeningNumber()
+	addRekening()
+	tambahSaldo()
+	tarikSaldo()
+    }
+
+    class KoperasiController{
+        - DataModel dm
+        initialize()
+        ihandlebtnDaftar()
+	ihandlebtnRefresh()
+	ihandleClear()
+	ihandlebtnTambahrek()
+	ihandlebtnDeposit()
+	ihandlebtnWD()
+	phandlebtnDaftar()
+	phandlebtnRefresh()
+	phandlebtnClear()	
+	phandlebtnTambahRek()	
+	phandlebtnDeposit()
+	phandlebtnWD()
+	IviewDataRekening()
+	PviewDataRekening()
+    }
+    class DBHelper{
+        - String USER
+        - String PASSWORD
+        - String DB
+	- String MYCONN
+	- String SQCONN
+
+        getConnection()
+        getConnection(String driver)
+        createTable();
+    }
+            
+```
 ## DESKRIPSI PROGRAM
 > Program ini dapat digunakan untuk melakukan 
  transaksi tarik tunai, tambah saldo, pendaftaran rekening, penambahan rekening, perekaman atau penyimpanan data 
