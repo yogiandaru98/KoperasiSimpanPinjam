@@ -95,7 +95,7 @@ classDiagram
     Nasabah o-- DataModel : Data Modeling
     DataModel <-- KoperasiController : Data Control
     DataModel --> DBHelper : DB Connection
-    KoperasiController <.. KoperasiFormandButton : Form Control      
+    KoperasiController <.. KoperasiFormandButton : Form and button Control      
 
     class Nasabah{
       <<abstract>>
