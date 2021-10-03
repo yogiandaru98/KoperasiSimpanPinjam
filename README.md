@@ -69,7 +69,7 @@ erDiagram
           Nasabah ||--|| Perusahaan : is
           Nasabah ||--|{ Rekening: "has"
           Nasabah {
-            int id
+            int Rekeningid
             string nama
             string alamat
 
