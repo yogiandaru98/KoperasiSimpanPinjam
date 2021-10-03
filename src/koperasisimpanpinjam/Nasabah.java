@@ -19,7 +19,7 @@ public abstract class Nasabah {
 
     protected StringProperty nama;
     protected StringProperty alamat;
-    protected IntegerProperty jumlahakun;
+
     protected ArrayList<Rekening> rekening;
 
     public Nasabah(String nama, String alamat,
@@ -28,7 +28,7 @@ public abstract class Nasabah {
         this.nama = new SimpleStringProperty(nama);
         this.alamat = new SimpleStringProperty(alamat);
         this.rekening = rekening;
-        this.jumlahakun = new SimpleIntegerProperty(rekening.size());
+
     }
 
     public Nasabah(String nama, String alamat, Rekening rekenings) {
@@ -37,7 +37,7 @@ public abstract class Nasabah {
         this.nama = new SimpleStringProperty(nama);
         this.alamat = new SimpleStringProperty(alamat);
         this.rekening.add(rekenings);
-        this.jumlahakun = new SimpleIntegerProperty(rekening.size());
+
     }
 
     public String getNama() {
@@ -56,9 +56,7 @@ public abstract class Nasabah {
         this.alamat.set(alamat);
     }
 
-    public Integer getJumRekening() {
-        return jumlahakun.get();
-    }
+
 
     public ArrayList<Rekening> getRekening() {
         return rekening;
@@ -82,9 +80,7 @@ public abstract class Nasabah {
         return alamat;
     }
 
-    public IntegerProperty JumlahRekeningProperty() {
-        return jumlahakun;
-    }
+
 
     public void tambahRekening(Rekening rek) {
         rekening.add(rek);
