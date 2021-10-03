@@ -62,6 +62,30 @@
       
       }
 ```
+## ER DIAGRAM
+```mermaid
+erDiagram
+          Nasabah ||..|| individu : is
+          Nasabah ||--|| Perusahaan : is
+          Nasabah ||--|{ Rekening: "has"
+          Nasabah {
+            int id
+            string nama
+            string alamat
+
+          }
+          individu{
+            long nik
+            long npwp
+          }
+          Perusahaan{
+            string nib
+          }
+          Rekening{
+            int noRekening
+            double saldo
+          }
+```
 ### Design Class Diagram for JavaFX and Database
 ```mermaid
 classDiagram
