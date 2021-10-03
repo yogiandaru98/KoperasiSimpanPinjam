@@ -1,10 +1,10 @@
-# IMPLEMENTASI UML CLASS DIAGRAM KEDALAM PROJEK JAVAFX DENGAN DATA BASE
+# TUGAS AKHIR PROJEK JAVAFX DENGAN DATA BASE
 ## KElAS B ANGAKATAN 2020
-## ANGGOTA KELOMPOK DAN PEMBAGIAN TUGASNYA:
+### ANGGOTA KELOMPOK 2 DAN PEMBAGIAN TUGASNYA:
 * YOGI ANDARU
 * 2017051062
 * * TASK
-* * * Class Data Model
+* * * Class DataModel
 * * * Class KoperasiController
 * * * Class DBHelper
 * * * Data Base sqlite dan mysql
@@ -12,7 +12,7 @@
 * 2017051009
 * * TASK
 * * * Class Nasabah
-* * * Class individu
+* * * Class Individu
 * * * Class Perusahaan
 * * * Readme.md
 * IRMA AZIZAH 
@@ -30,7 +30,7 @@
 ```mermaid
  classDiagram
        Nasabah "1"--o"*" Rekening : has
-       Nasabah <|-- individu
+       Nasabah <|-- Individu
        Nasabah <|-- Perusahaan
 
       class Nasabah{
@@ -42,10 +42,10 @@
 
           +abstract print()
       }
-      class individu{
+      class Individu{
           -long nik
           -long npwp
-          +individu(nik, npwp, alamat, rekening)
+          +Individu(nik, npwp, alamat, rekening)
           + print()
       }
       class Rekening{
@@ -62,104 +62,14 @@
       
       }
 ```
-## ER DIAGRAM
-```mermaid
-erDiagram
-          Nasabah ||..|| INDIVIDU : is
-          Nasabah ||--|| Perusahaan : is
-          Nasabah ||--|{ Rekening: "has"
-          Nasabah {
-            int id
-            string nama
-            string alamat
-
-          }
-          INDIVIDU{
-            long nik
-            long npwp
-          }
-          Perusahaan{
-            string nib
-          }
-          Rekening{
-            int noRekening
-            double saldo
-          }
-```
-
-### Design Class Diagram for JavaFX and Database
-```mermaid
-classDiagram
-    Nasabah <|-- Individu
-    Nasabah <|-- Perusahaan
-    Nasabah "1"--o"*" Rekening : has
-    Nasabah o-- DataModel : Data Modeling
-    DataModel <-- KoperasiController : Data Control
-    DataModel --> DBHelper : DB Connection
-    KoperasiController <.. AccountHolderForm : Form Control      
-
-    class Nasabah{
-      <<abstract>>
-      -IntegerProperty RekeningID
-      -StringProperty nama
-      -StringProperty alamat
-        +Nasabah(nama, alamat ,rekening)
-        +tambahRekening(Rekening rek)
-    }
-    
-    class Individu{
-      -LongProperty nik
-      -LongProperty npwp
-
-    }
-    class Perusahaan{
-      -StringProperty nib
-    }
-    class Rekening{
-      -DoubleProperty balance
-      +tambahSaldo(double jumlah)
-      +tarikSaldo(double jumlah)
-      +double getBalance()
-    }
-
-    class DataModel{
-        Connection conn
-        addAccountHolder()
-        addAccount()
-        getIndividualHolders()
-        getCorporateHolders()
-        nextAccountHolderID()
-        nextAccountNumber()
-    }
-
-    class KoperasiController{
-        private DataModel dm
-        initialize()
-        handleButtonAddAccount()
-        handleButtonAddAccountHolder()
-        loadDataIndividualHolder()
-        loadDataCorporateHolder()
-        loadDataAccount()
-        handleClearForm()
-    }
-    class DBHelper{
-        - String USERNAME
-        - String PASSWORD
-        - String DB
-        getConnection()
-        getConnection(String driver)
-        createTable();
-    }
-            
-```
 ## DESKRIPSI PROGRAM
-### Program ini dapat digunakan untuk melakukan 
-### transaksi perekaman atau penyimpanan data 
-### pemegang akun di suatu Koperasi Simpan Pinjam, 
-### dimana terdapat 2 jenis akun yaitu akun 
-### individu dan akun perusahaan. Setiap Pemegang 
-### Akun dapat memiliki 1 akun atau lebih. 
-##  
+> Program ini dapat digunakan untuk melakukan 
+ transaksi tarik tunai, tambah saldo, pendaftaran rekening, penambahan rekening, perekaman atau penyimpanan data 
+ pemegang akun di suatu Koperasi Simpan Pinjam, 
+ dimana terdapat 2 jenis akun yaitu akun 
+ individu dan akun perusahaan. Setiap Pemegang 
+ Akun dapat memiliki 1 akun atau lebih. 
+#
 ### Program ini di rancang dengan berbagai tools, yaitu : 
 * *  Netbeans 8.0.2
 * *  Java 8 Oracle
